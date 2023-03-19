@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="shortcut icon" href="favicon.ico">
+	<title>Cells</title>
+</head>
+<body>
+<div class="body-wrapper">
+
+	<main id="main" class="main">
+
+		<div id="audio-player" class="audio-player">
+		</div>
+
+		<div id="controls" class="controls">
+			<div class="controls__time">
+				<span id="controls__time__current" class="controls__time__current">00:00:00</span>
+				<span class="controls__time__separator">/</span>
+				<span id="controls__time__duration" class="controls__time__duration">00:00:00</span>
+			</div>
+			<div id="player-buttons" class="player-buttons">
+				<button id="controls__prev-btn" class="player-buttons__button controls__prev-btn">
+					Prev
+				</button>
+				<button id="controls__play-btn" class="player-buttons__button controls__play-btn">
+					Play
+				</button>
+				<button id="controls__next-btn" class="player-buttons__button controls__next-btn">
+					Next
+				</button>
+			</div>
+
+			<div class="controls__slider-wrapper">
+				<div class="controls__slider controls__slider--progress-bar">
+					<div id="controls__progress-bar__handle" class="controls__slider__handle"></div>
+				</div>
+				<div class="controls__slider controls__slider--volume">
+					<div id="controls__volume__handle" class="controls__slider__handle"></div>
+				</div>
+			</div>
+
+		</div>
+
+		<div id="mailer" class="mailer">
+			<form id="form" action="submit" class="form">
+				<ul class="form__fields">
+					<li class="form__field">
+						<div class="authorize-btns">
+							<button id="authorize_button" class="form__btn" onclick="handleAuthClick()">Authorize
+							</button>
+							<button id="signout_button" class="form__btn" onclick="handleSignoutClick()">Sign Out
+							</button>
+						</div>
+					</li>
+					<li class="form__field">
+						<label class="form__label ">
+							<input id="to" type="text" class="form__input" placeholder="To">
+						</label>
+					</li>
+					<li class="form__field">
+						<label class="form__label ">
+							<input id="subject" type="text" class="form__input" placeholder="Subject">
+						</label>
+					</li>
+
+					<li class="form__field">
+						<label class="form__label ">
+							<textarea id="message" cols="30" rows="4"
+									  class="form__input form__input--textarea" placeholder="Message"></textarea>
+						</label>
+					</li>
+
+					<li class="form__field">
+						<button type="reset" class="form__btn">Clear</button>
+						<button id="send-btn" type="submit" class="form__btn">Send</button>
+					</li>
+
+					<li class="form__field">
+						<span id="form__error" class="form__error"></span>
+					</li>
+				</ul>
+
+			</form>
+			<div class="help">
+				<span class="help__title">Authorization data</span>
+				<div class="authorize-btns">
+					<button id="copy__email" class="form__btn">Copy e-mail</button>
+					<button id="copy__password" class="form__btn">Copy password</button>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="cell-container">
+			<div class="point">
+				<ul id="main-cell" class="cell mod red">
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+				</ul>
+				<ul id="cell--video-btn" class="cell mod red cell--btn">
+					<li class="cell__text ">Video</li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+				</ul>
+				<ul id="cell--mail-btn" class="cell mod red cell--btn">
+					<li class="cell__text">Mail</li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+				</ul>
+				<ul class="cell mod red">
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+				</ul>
+				<ul id="cell--audio-btn" class="cell mod red cell--btn">
+					<li class="cell__text">Audio</li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+				</ul>
+				<ul class="cell mod red">
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+				</ul>
+				<ul class="cell mod red">
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+				</ul>
+				<ul class="cell mod red">
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+				</ul>
+
+				<ul class="cell mod red">
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+				</ul>
+				<ul class="cell mod red">
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+				</ul>
+				<ul class="cell mod red">
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+				</ul>
+				<ul class="cell mod red">
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+				</ul>
+				<ul class="cell mod red">
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+				</ul>
+				<ul class="cell mod red">
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+				</ul>
+				<ul class="cell mod red">
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+				</ul>
+				<ul class="cell mod red">
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+				</ul>
+				<ul class="cell mod red">
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+				</ul>
+				<ul class="cell mod red">
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+				</ul>
+				<ul class="cell mod red">
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+					<li class="cell__item"></li>
+				</ul>
+			</div>
+
+		</div>
+	</main>
+
+</div>
+<script id="app" defer async src="js/app.js"></script>
+
+</body>
+</html>
